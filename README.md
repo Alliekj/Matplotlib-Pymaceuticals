@@ -54,7 +54,7 @@ Data Cleaning:
 
 Combining data from different sources.
 Handling missing values and duplicates.
-Exploratory Data Analysis (EDA):
+Exploratory Data Analysis:
 
 Summary statistics.
 Distribution plots.
