@@ -30,8 +30,8 @@ Create the Data folder and move the required data files:
 sh
 Copy code
 mkdir Data
-mv "/Users/alliejenkins/Downloads/Starter_Code 20/Pymaceuticals/data/Mouse_metadata.csv" Data/
-mv "/Users/alliejenkins/Downloads/Starter_Code 20/Pymaceuticals/data/Study_results.csv" Data/
+mv "path to/data/Mouse_metadata.csv" Data/
+mv "path to/data/Study_results.csv" Data/
 Install Dependencies:
 
 Make sure you have the necessary Python libraries installed. You can install the required packages using pip:
