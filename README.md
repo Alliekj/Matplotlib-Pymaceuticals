@@ -18,6 +18,8 @@ The analysis is divided into the following sections:
 - Identify any duplicate mouse IDs and remove them to clean the dataset.
 - Display the number of unique mice IDs before and after data cleaning.
 
+---
+
 ## Data Cleaning
 
 The data was loaded, read, combined, and cleaned by removing any duplicate mouse entries. The cleaned data includes the following columns: `Mouse ID`, `Drug Regimen`, `Sex`, `Age_months`, `Weight (g)`, `Timepoint`, `Tumor Volume (mm3)`, and `Metastatic Sites`. Below is a preview of the cleaned data:
@@ -49,6 +51,7 @@ The data was loaded, read, combined, and cleaned by removing any duplicate mouse
 | Stelasyn     | 54.233149  | 52.431737  | 59.450562  | 7.710419   | 0.573111  |
 | Zoniferol    | 53.236507  | 51.818479  | 48.533355  | 6.966589   | 0.516398  |
 
+---
 
 ### 3. Create Bar Charts and Pie Charts
 
@@ -76,6 +79,8 @@ The pie charts below visualizes the gender distribution of the mice.
 
   ![Matplotlib Pie Chart](figures/matplotlib_pie_chart.png)
 
+---
+
 ### 4. Calculate Quartiles, Find Outliers, and Create a Box Plot
 
 The final tumor volumes were examined for four drug regimens: Capomulin, Ramicane, Infubinol, and Ceftamin. Quartiles, IQR, and potential outliers were calculated for these regimens.
@@ -89,14 +94,12 @@ The final tumor volumes were examined for four drug regimens: Capomulin, Ramican
 | f966     | 20        | 30.485985          | Capomulin    | Male  | 17         |
 
 ### Capomulin Quartiles and IQR
-```python
+
 Capomulin_tumors = Capomulin_merge["Tumor Volume (mm3)"]
 quartiles = Capomulin_tumors.quantile([.25,.5,.75])
 lowerq = quartiles[0.25]
 upperq = quartiles[0.75]
 iqr = upperq - lowerq
-
-print(f"Lower quartile: {lowerq}, Upper quartile: {upperq}, IQR: {iqr}")
 
 The box plot below visualizes the distribution of tumor volumes for the four regimens: Capomulin, Ramicane, Infubinol, and Ceftamin.
 
@@ -127,7 +130,6 @@ The scatter plot below visualizes the relationship between mouse weight and aver
 # Correlation Coefficient
 
 The correlation coefficient between mouse weight and tumor volume under Capomulin treatment was calculated:
-```python
 corr = st.pearsonr(avg_capm_vol['Weight (g)'], avg_capm_vol['Tumor Volume (mm3)'])[0]
 print(f"Correlation coefficient: {corr}")
 Output: 0.84
